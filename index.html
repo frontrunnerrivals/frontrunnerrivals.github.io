@@ -3,27 +3,181 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Front Runner Rivals</title>
-<meta name="description" content="Front Runner Rivals — arcade horse racing for iPhone and Android.">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@1,700&family=Source+Sans+3:wght@400;600&display=swap">
+<title>Front Runner Rivals — Arcade Horse Racing</title>
+<meta name="description" content="Front Runner Rivals — arcade horse racing for iPhone and Android. Pick your horse, master 12 tracks around the world and race for the world rankings.">
+<meta property="og:title" content="Front Runner Rivals">
+<meta property="og:description" content="Arcade horse racing for iPhone and Android. 12 tracks, 5 horses, one world ranking.">
+<meta property="og:image" content="https://frontrunnerrivals.com/assets/hero.jpg">
+<meta property="og:url" content="https://frontrunnerrivals.com/">
+<meta name="theme-color" content="#071634">
+<link rel="icon" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;1,800&family=Source+Sans+3:wght@400;600&display=swap">
 <style>
-:root{--bg:#120a2e;--fg:#f1eefc;--muted:#b9b2d8;--gold:#ffd660}
-body{margin:0;min-height:100vh;background:radial-gradient(circle at 50% 0%,#3a2678 0%,#120a2e 60%);color:var(--fg);font:400 18px/1.6 "Source Sans 3","Segoe UI",Roboto,Arial,sans-serif;display:flex;align-items:center;justify-content:center}
-main{max-width:640px;padding:48px 16px;text-align:center}
-h1{font:italic 700 clamp(44px,10vw,76px)/1 "Barlow Condensed","Arial Narrow",Arial,sans-serif;color:var(--gold);margin:0 0 12px;letter-spacing:.01em}
-p{color:var(--muted);margin:0 0 28px}
-nav{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
-a{color:#120a2e;background:var(--gold);padding:10px 20px;border-radius:999px;text-decoration:none;font-weight:600}
-footer{margin-top:36px;font-size:15px;color:var(--muted)}
-footer a{background:none;color:var(--muted);padding:0;text-decoration:underline;font-weight:400}
+:root{--bg:#071634;--bg2:#0c2250;--card:#102a5e;--line:#1f4387;--fg:#eef3ff;--muted:#a9b9dd;--gold:#ffcf3f;--gold2:#ffb000;--blue:#2f8cff}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--fg);font:400 18px/1.6 "Source Sans 3","Segoe UI",Roboto,Arial,sans-serif}
+a{color:inherit}
+img{max-width:100%;height:auto;display:block}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+header.top{position:sticky;top:0;z-index:5;background:rgba(7,22,52,.86);backdrop-filter:blur(8px);border-bottom:1px solid rgba(47,140,255,.18)}
+header.top .wrap{display:flex;align-items:center;gap:12px;height:62px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font:italic 800 24px/1 "Barlow Condensed",Arial,sans-serif;letter-spacing:.02em}
+.brand img{width:34px;height:34px;border-radius:9px}
+.brand span{color:var(--gold)}
+nav.links{margin-left:auto;display:flex;gap:18px;align-items:center;font-weight:600;font-size:16px}
+nav.links a{text-decoration:none;color:var(--muted)}
+nav.links a:hover{color:var(--fg)}
+.lang{display:flex;border:1px solid var(--line);border-radius:999px;overflow:hidden}
+.lang button{background:none;border:0;color:var(--muted);font:600 14px/1 inherit;padding:7px 11px;cursor:pointer}
+.lang button.on{background:var(--gold);color:#0b1a3a}
+.hero{position:relative;overflow:hidden;background:radial-gradient(circle at 75% 35%,#1a4fb0 0%,#0a2050 45%,var(--bg) 75%)}
+.hero .wrap{display:grid;grid-template-columns:1fr 1.15fr;gap:32px;align-items:center;padding-top:56px;padding-bottom:64px}
+.kicker{display:inline-block;font:600 14px/1 "Source Sans 3",sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);border:1px solid rgba(255,207,63,.4);padding:7px 12px;border-radius:999px;margin-bottom:18px}
+h1{font:italic 800 clamp(48px,7.4vw,92px)/.92 "Barlow Condensed",Arial,sans-serif;margin:0 0 18px;letter-spacing:.005em}
+h1 .g{display:block;background:linear-gradient(180deg,#fff2b0 0%,var(--gold) 45%,var(--gold2) 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{color:var(--muted);font-size:20px;margin:0 0 28px;max-width:30em}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-flex;align-items:center;gap:10px;text-decoration:none;font-weight:600;border-radius:14px;padding:13px 20px;border:1px solid var(--line);background:var(--card);color:var(--fg)}
+.btn small{display:block;font-size:12px;font-weight:400;color:var(--muted);line-height:1.1}
+.btn b{display:block;font-size:17px;line-height:1.2}
+.btn.primary{background:linear-gradient(180deg,var(--gold),var(--gold2));color:#0b1a3a;border:0}
+.btn.primary small{color:#3b2e00}
+.btn svg{width:24px;height:24px;flex:none}
+.heroart{border-radius:22px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.55),0 0 0 1px rgba(255,207,63,.25)}
+section{padding:72px 0}
+h2{font:italic 800 clamp(34px,4.6vw,52px)/1 "Barlow Condensed",Arial,sans-serif;margin:0 0 10px}
+.sub{color:var(--muted);margin:0 0 34px;max-width:40em}
+.feats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.feat{background:linear-gradient(180deg,var(--card),var(--bg2));border:1px solid var(--line);border-radius:18px;padding:22px}
+.feat .n{font:italic 800 44px/1 "Barlow Condensed",Arial,sans-serif;color:var(--gold)}
+.feat h3{margin:8px 0 6px;font-size:19px}
+.feat p{margin:0;color:var(--muted);font-size:16px}
+.shots{display:grid;grid-template-columns:2fr 1fr;grid-template-rows:auto auto;gap:14px}
+.shots figure{margin:0;border-radius:16px;overflow:hidden;border:1px solid var(--line);background:#000;position:relative}
+.shots figure:first-child{grid-row:span 2}
+.shots img{width:100%;height:100%;object-fit:cover}
+.shots figcaption{position:absolute;left:10px;bottom:10px;background:rgba(7,22,52,.82);padding:5px 10px;border-radius:8px;font-size:14px;font-weight:600}
+.strip{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}
+.how{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.how div{border-left:3px solid var(--gold);padding:4px 0 4px 16px}
+.how b{display:block;font-size:19px;margin-bottom:4px}
+.how p{margin:0;color:var(--muted);font-size:16px}
+.band{background:linear-gradient(90deg,#0d2a66,#13377f);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.band .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px}
+.band h2{margin:0}
+footer.foot{padding:36px 0 48px;color:var(--muted);font-size:15px}
+footer.foot .wrap{display:flex;flex-wrap:wrap;gap:14px 26px;align-items:center}
+footer.foot a{color:var(--muted)}
+footer.foot .sp{margin-left:auto}
+html:not([lang=tr]) [data-tr]{display:none!important}
+html[lang=tr] [data-en]{display:none!important}
+@media (max-width:900px){
+ .hero .wrap{grid-template-columns:1fr;padding-top:36px}
+ .feats{grid-template-columns:1fr 1fr}
+ .how{grid-template-columns:1fr}
+ nav.links a.hide-sm{display:none}
+}
+@media (max-width:560px){
+ .wrap{padding:0 16px}
+ .feats{grid-template-columns:1fr}
+ .shots{grid-template-columns:1fr}
+ .shots figure:first-child{grid-row:auto}
+ .strip{grid-template-columns:1fr}
+ section{padding:52px 0}
+ .lead{font-size:18px}
+ .brand{font-size:20px}
+ .brand img{width:28px;height:28px}
+ nav.links{gap:10px;font-size:15px}
+}
 </style>
 </head>
 <body>
+<header class="top"><div class="wrap">
+ <a class="brand" href="#"><img src="assets/icon-192.png" alt="">Front Runner <span>Rivals</span></a>
+ <nav class="links">
+  <a class="hide-sm" href="#features"><span data-en>Features</span><span data-tr>Özellikler</span></a>
+  <a class="hide-sm" href="#tracks"><span data-en>Tracks</span><span data-tr>Pistler</span></a>
+  <a href="privacy.html"><span data-en>Privacy</span><span data-tr>Gizlilik</span></a>
+  <div class="lang" role="group" aria-label="Language"><button type="button" data-l="en">EN</button><button type="button" data-l="tr">TR</button></div>
+ </nav>
+</div></header>
+
 <main>
-  <h1>Front Runner Rivals</h1>
-  <p>Arcade horse racing for iPhone and Android. Pick your horse, master 12 tracks around the world and race for the world rankings.</p>
-  <nav><a href="privacy.html">Privacy Policy</a><a href="mailto:frontrunnerrivals@gmail.com">Support</a></nav>
-  <footer>Contact: <a href="mailto:frontrunnerrivals@gmail.com">frontrunnerrivals@gmail.com</a></footer>
+<div class="hero"><div class="wrap">
+ <div>
+  <span class="kicker"><span data-en>Arcade horse racing · iPhone &amp; Android</span><span data-tr>Arcade at yarışı · iPhone &amp; Android</span></span>
+  <h1>Front Runner <span class="g">Rivals</span></h1>
+  <p class="lead"><span data-en>Pick your horse, read the race and time your sprint. Twelve famous tracks around the world, ten rival stables and one world ranking.</span><span data-tr>Atını seç, yarışı oku, atağını doğru anda yap. Dünyanın dört bir yanında 12 ünlü pist, 10 rakip ahır ve tek bir dünya sıralaması.</span></p>
+  <div class="cta">
+   <a class="btn primary" href="https://testflight.apple.com/join/SwDPgVXk"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.4 12.6c0-2.4 2-3.6 2.1-3.7-1.2-1.7-3-1.9-3.6-2-1.5-.2-3 .9-3.8.9-.8 0-2-.9-3.3-.9-1.7 0-3.2 1-4.1 2.5-1.8 3-.5 7.5 1.2 10 .8 1.2 1.8 2.6 3.1 2.5 1.2 0 1.7-.8 3.2-.8s1.9.8 3.2.8c1.3 0 2.2-1.2 3-2.4 1-1.4 1.3-2.7 1.3-2.8 0 0-2.6-1-2.6-4zM14 5.2c.7-.8 1.1-1.9 1-3-1 0-2.1.6-2.8 1.4-.6.7-1.2 1.8-1 2.9 1.1.1 2.1-.5 2.8-1.3z"/></svg><span><small data-en>iPhone beta</small><small data-tr>iPhone beta</small><b data-en>Join on TestFlight</b><b data-tr>TestFlight'ta katıl</b></span></a>
+   <span class="btn" aria-disabled="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3.6 2.3c-.2.2-.3.6-.3 1v17.4c0 .4.1.8.3 1l9.7-9.7L3.6 2.3zm10.8 10.8 2.9 2.9-11.6 6.6c-.4.2-.8.2-1.1 0l9.8-9.5zm0-2.2L4.6 1.4c.3-.2.7-.2 1.1 0l11.6 6.6-2.9 2.9zm4.1-2.2 3.2 1.8c.9.5.9 1.4 0 1.9l-3.2 1.8-3.1-3 3.1-2.5z"/></svg><span><small data-en>Android</small><small data-tr>Android</small><b data-en>Google Play · soon</b><b data-tr>Google Play · yakında</b></span></span>
+  </div>
+ </div>
+ <div class="heroart"><img src="assets/hero.jpg" width="1024" height="500" alt="Front Runner Rivals golden horse key art"></div>
+</div></div>
+
+<section id="features"><div class="wrap">
+ <h2><span data-en>Built for short, intense races</span><span data-tr>Kısa ve heyecanlı yarışlar için</span></h2>
+ <p class="sub"><span data-en>Every race is a duel of stamina and timing. Hold your line, save energy, then unleash the whip and super boost on the final straight.</span><span data-tr>Her yarış dayanıklılık ve zamanlama düellosu. Çizgini koru, enerjini sakla, son düzlükte kamçıyı ve süper atağı patlat.</span></p>
+ <div class="feats">
+  <div class="feat"><div class="n">12</div><h3><span data-en>World tracks</span><span data-tr>Dünya pisti</span></h3><p><span data-en>From Dubai and Kentucky to Vienna, Tokyo and The Gazi — turf, dirt, mud, sand and snow.</span><span data-tr>Dubai ve Kentucky'den Viyana, Tokyo ve Gazi'ye; çim, toprak, çamur, kum ve kar.</span></p></div>
+  <div class="feat"><div class="n">5+</div><h3><span data-en>Horses with character</span><span data-tr>Karakterli atlar</span></h3><p><span data-en>Power, stamina and sprint really matter. Unlock Golden Legend and White Cloud by clearing every track.</span><span data-tr>Güç, dayanıklılık ve sürat gerçekten önemli. Tüm pistleri bitirerek Golden Legend ve White Cloud'u aç.</span></p></div>
+  <div class="feat"><div class="n">10</div><h3><span data-en>Rival stables</span><span data-tr>Rakip ahır</span></h3><p><span data-en>Every rival rides with its own personality and race tempo — no two races feel the same.</span><span data-tr>Her rakip kendi karakteri ve yarış temposuyla koşar; hiçbir yarış birbirine benzemez.</span></p></div>
+  <div class="feat"><div class="n">1</div><h3><span data-en>World ranking</span><span data-tr>Dünya sıralaması</span></h3><p><span data-en>Set your best time on all 12 tracks and see where your total ranks against players worldwide.</span><span data-tr>12 pistin hepsinde derece yap, toplam süren dünyada kaçıncı, gör.</span></p></div>
+ </div>
+</div></section>
+
+<section id="tracks" style="padding-top:0"><div class="wrap">
+ <h2><span data-en>See it in action</span><span data-tr>Oyundan kareler</span></h2>
+ <p class="sub"><span data-en>Hand-crafted racecourses, living crowds, weather that changes the ground under your hooves.</span><span data-tr>Elde tasarlanmış hipodromlar, canlı seyirciler ve zemini değiştiren hava koşulları.</span></p>
+ <div class="shots">
+  <figure><img src="assets/dubai.jpg" width="1024" height="576" alt="Racing at the Dubai Cup" loading="lazy"><figcaption>Dubai Cup</figcaption></figure>
+  <figure><img src="assets/amsterdam.jpg" width="1024" height="576" alt="Amsterdam track" loading="lazy"><figcaption>Amsterdam</figcaption></figure>
+  <figure><img src="assets/swiss.jpg" width="1024" height="576" alt="Snowy Swiss track" loading="lazy"><figcaption>Swiss Alps</figcaption></figure>
+ </div>
+ <div class="strip">
+  <figure style="margin:0;border-radius:16px;overflow:hidden;border:1px solid var(--line)"><img src="assets/gazi.jpg" width="1024" height="576" alt="The Gazi race" loading="lazy"></figure>
+  <figure style="margin:0;border-radius:16px;overflow:hidden;border:1px solid var(--line)"><img src="assets/menu.jpg" width="1024" height="576" alt="Main menu and stable" loading="lazy"></figure>
+ </div>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+ <h2><span data-en>How to ride</span><span data-tr>Nasıl oynanır</span></h2>
+ <p class="sub"><span data-en>Simple one-thumb controls, deep racing.</span><span data-tr>Tek parmakla basit kontroller, derin bir yarış.</span></p>
+ <div class="how">
+  <div><b><span data-en>Steer &amp; hold the rail</span><span data-tr>Yönlendir, iç kulvarı tut</span></b><p><span data-en>The shortest line wins — but watch the traffic and the hazards.</span><span data-tr>En kısa çizgi kazandırır; ama trafiğe ve engellere dikkat.</span></p></div>
+  <div><b><span data-en>Manage stamina</span><span data-tr>Dayanıklılığı yönet</span></b><p><span data-en>Pull the reins to recover. Run dry and your horse slows down.</span><span data-tr>Dizginle toparlan. Enerji biterse atın yavaşlar.</span></p></div>
+  <div><b><span data-en>Whip &amp; super boost</span><span data-tr>Kamçı ve süper atak</span></b><p><span data-en>Time your attack on the final straight and win by a nose.</span><span data-tr>Atağını son düzlükte zamanla, burun farkıyla kazan.</span></p></div>
+ </div>
+</div></section>
+
+<div class="band"><div class="wrap" style="padding-top:34px;padding-bottom:34px">
+ <h2><span data-en>Ready to race?</span><span data-tr>Yarışa hazır mısın?</span></h2>
+ <div class="cta">
+  <a class="btn primary" href="https://testflight.apple.com/join/SwDPgVXk"><span><small data-en>iPhone beta</small><small data-tr>iPhone beta</small><b data-en>Join on TestFlight</b><b data-tr>TestFlight'ta katıl</b></span></a>
+  <a class="btn" href="mailto:frontrunnerrivals@gmail.com"><span><small data-en>Questions or bugs?</small><small data-tr>Soru veya hata?</small><b data-en>Contact support</b><b data-tr>Destek ile iletişim</b></span></a>
+ </div>
+</div></div>
 </main>
+
+<footer class="foot"><div class="wrap">
+ <span>© 2026 Front Runner Rivals</span>
+ <a href="privacy.html"><span data-en>Privacy Policy</span><span data-tr>Gizlilik Politikası</span></a>
+ <a href="mailto:frontrunnerrivals@gmail.com">frontrunnerrivals@gmail.com</a>
+ <span class="sp"><span data-en>Made with care in Türkiye</span><span data-tr>Türkiye'de özenle yapıldı</span></span>
+</div></footer>
+
+<script>
+(function(){
+ var root=document.documentElement,btns=document.querySelectorAll('.lang button');
+ function set(l){root.lang=l;btns.forEach(function(b){b.classList.toggle('on',b.dataset.l===l)});try{localStorage.setItem('frr-lang',l)}catch(e){}}
+ var saved=null;try{saved=localStorage.getItem('frr-lang')}catch(e){}
+ set(saved||((navigator.language||'').toLowerCase().indexOf('tr')===0?'tr':'en'));
+ btns.forEach(function(b){b.addEventListener('click',function(){set(b.dataset.l)})});
+})();
+</script>
 </body>
 </html>
