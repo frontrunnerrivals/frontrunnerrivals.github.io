@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Front Runner Rivals — Play on Android</title>
+<meta name="description" content="Arcade horse racing. Choose your horse, manage your stamina and time your sprint. Download Front Runner Rivals on Google Play.">
+<meta name="theme-color" content="#101419"><meta name="robots" content="noindex,follow">
+<link rel="icon" href="/favicon.png">
+<style>
+*{box-sizing:border-box}body{margin:0;background:#101419;color:#f7f6ef;font:17px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif}
+.wrap{max-width:1000px;margin:auto;padding:22px 24px}header{display:flex;align-items:center;justify-content:space-between;gap:20px;border-bottom:1px solid #30353a}
+.logo{width:115px;height:46px;object-fit:contain}select{background:#20262d;color:#fff;border:1px solid #535b64;border-radius:8px;padding:10px;font:inherit;max-width:145px}
+main{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center;padding-top:38px!important}
+.kicker{color:#ffe339;font-size:12px;letter-spacing:.13em;font-weight:800}h1{font-size:clamp(32px,5vw,56px);line-height:1.04;letter-spacing:-.04em;margin:14px 0}h1 span{color:#ffe339}
+.lead{color:#c9d0d6;margin:18px 0}.download{display:block;text-align:center;background:#ffe339;color:#101419;border-radius:12px;padding:16px 22px;text-decoration:none;font-size:20px;font-weight:850}
+.download small{display:block;font-size:12px;font-weight:600;margin-top:3px}.facts{display:flex;gap:20px;margin:22px 0;color:#f7f6ef}.facts b{display:block;font-size:28px;line-height:1.1}.facts span{color:#b9c2cb;font-size:13px}
+.shot{width:100%;border-radius:16px;border:1px solid #454b52;display:block;aspect-ratio:1.55;object-fit:cover;object-position:center}
+.note{font-size:12px;color:#aeb8c2;margin:18px 0}.caption{color:#c9d0d6;font-size:13px;margin:10px 0}footer{font-size:12px;color:#aeb8c2;padding-top:28px!important;padding-bottom:24px!important}footer a{color:#cbd2d9}
+a:focus-visible,select:focus-visible{outline:3px solid white;outline-offset:4px}
+@media(max-width:680px){.wrap{padding:16px 20px}main{grid-template-columns:1fr;gap:20px;padding-top:22px!important}h1{font-size:38px}.lead{font-size:16px;margin:14px 0}.facts{margin:18px 0}.shot{aspect-ratio:2.17}.note{margin-bottom:0}.logo{width:100px;height:38px}}
+</style>
+</head>
+<body>
+<header class="wrap"><a href="/" aria-label="Front Runner Rivals"><img class="logo" src="/FRR.svg" alt="Front Runner Rivals"></a><select id="lang" aria-label="Language"><option value="en">English</option><option value="tr">Türkçe</option><option value="pt-BR">Português</option><option value="hi">हिन्दी</option></select></header>
+<main class="wrap"><section>
+<div class="kicker" data-copy="kicker">ARCADE HORSE RACING · ANDROID</div>
+<h1>FRONT RUNNER<br><span>RIVALS</span></h1>
+<p class="lead" data-copy="lead">Pick your horse. Manage your stamina. Time your sprint.</p>
+<a class="download" id="play" href="https://play.google.com/store/apps/details?id=com.frontrunnerrivals.game"><span data-copy="cta">DOWNLOAD NOW</span><small>Google Play · Android</small></a>
+<div class="facts"><div><b>20</b><span data-copy="horses">playable horses</span></div><div><b>30</b><span data-copy="tracks">tracks</span></div></div>
+<p class="note" data-copy="note">Free download. Contains ads and optional in-app purchases. Some horses and tracks must be unlocked. Game interface: English and Turkish.</p>
+</section><section><img class="shot" src="/gazi-start.jpg" alt="Front Runner Rivals gameplay" width="1920" height="886"><p class="caption" data-copy="caption">Real gameplay. Every move matters, from the start to the final straight.</p></section></main>
+<footer class="wrap">© 2026 Front Runner Rivals · <a href="/privacy.html" data-copy="privacy">Privacy policy</a> · <a href="mailto:frontrunnerrivals@gmail.com" data-copy="support">Support</a></footer>
+<script>
+const copy = {
+en:{kicker:"ARCADE HORSE RACING · ANDROID",lead:"Pick your horse. Manage your stamina. Time your sprint.",cta:"DOWNLOAD NOW",horses:"playable horses",tracks:"tracks",note:"Free download. Contains ads and optional in-app purchases. Some horses and tracks must be unlocked. Game interface: English and Turkish.",caption:"Real gameplay. Every move matters, from the start to the final straight.",privacy:"Privacy policy",support:"Support"},
+tr:{kicker:"ARCADE AT YARIŞI · ANDROID",lead:"Atını seç. Nefesini yönet. Atağını doğru anda yap.",cta:"ŞİMDİ İNDİR",horses:"oynanabilir at",tracks:"pist",note:"Ücretsiz indir. Reklamlar ve isteğe bağlı uygulama içi satın alımlar içerir. Bazı at ve pistlerin kilidi açılmalıdır. Oyun arayüzü: Türkçe ve İngilizce.",caption:"Gerçek oyun görüntüsü. Starttan son düzlüğe, her hamle önemli.",privacy:"Gizlilik politikası",support:"Destek"},
+"pt-BR":{kicker:"CORRIDA DE CAVALOS ARCADE · ANDROID",lead:"Escolha seu cavalo. Controle a resistência. Ataque na hora certa.",cta:"BAIXE AGORA",horses:"cavalos jogáveis",tracks:"pistas",note:"Download grátis. Contém anúncios e compras opcionais no aplicativo. Alguns cavalos e pistas precisam ser desbloqueados. Interface do jogo: inglês e turco.",caption:"Imagem real do jogo. Cada decisão conta, da largada à reta final.",privacy:"Política de privacidade",support:"Suporte"},
+hi:{kicker:"आर्केड घुड़दौड़ · ANDROID",lead:"अपना घोड़ा चुनें। स्टैमिना बचाएँ। सही समय पर रफ़्तार बढ़ाएँ।",cta:"अभी डाउनलोड करें",horses:"खेलने योग्य घोड़े",tracks:"रेस ट्रैक",note:"डाउनलोड मुफ़्त है। इसमें विज्ञापन और वैकल्पिक इन-ऐप खरीदारी शामिल हैं। कुछ घोड़े और ट्रैक अनलॉक करने होंगे। गेम का इंटरफ़ेस अंग्रेज़ी और तुर्की में है।",caption:"गेम का असली दृश्य। शुरुआत से आख़िरी सीधे हिस्से तक, हर फ़ैसला मायने रखता है।",privacy:"गोपनीयता नीति",support:"सहायता"}
+};
+const params = new URLSearchParams(location.search);
+const requested = params.get("lang") || navigator.language;
+let lang = copy[requested] ? requested : requested.toLowerCase().startsWith("pt") ? "pt-BR" : requested.toLowerCase().startsWith("tr") ? "tr" : requested.toLowerCase().startsWith("hi") ? "hi" : "en";
+function render(){
+ document.documentElement.lang=lang; document.getElementById("lang").value=lang;
+ document.querySelectorAll("[data-copy]").forEach(el=>el.textContent=copy[lang][el.dataset.copy]);
+ const target=new URL("https://play.google.com/store/apps/details");
+ target.searchParams.set("id","com.frontrunnerrivals.game"); target.searchParams.set("hl",lang);
+ const ref=new URLSearchParams();
+ ["utm_source","utm_medium","utm_campaign","utm_content","utm_term"].forEach(key=>{const value=params.get(key);if(value&&value.length<=250){target.searchParams.set(key,value);ref.set(key,value)}});
+ if(ref.size)target.searchParams.set("referrer",ref.toString());
+ document.getElementById("play").href=target.href;
+}
+document.getElementById("lang").addEventListener("change",e=>{lang=e.target.value;params.set("lang",lang);history.replaceState(null,"","?"+params.toString());render()});
+render();
+</script>
+</body></html>
